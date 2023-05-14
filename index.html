@@ -15,20 +15,52 @@
             <button onclick="orangeTheme()" style="background-color: orange; border-radius: 30px; height: 50px; width: 50px; border: 0;"></button>
         </div>
         <div class="row" id="main-content">
-            <!-- <div class="col-4">
-                <div class="card d-flex flex-row align-items-center border-0" id="demo1" style="background-color: blue; color: white;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!</p>
-                    </div>
-                    <button class="mx-4 px-3 py-2" onclick="myFunction()" style="background-color: red; border: 0;border-radius: 5px; color: white;">delete</button>
-                </div>
-            </div> -->
+            <!-- Main code in Javascript -->
         </div>
     </div>
    <script>
 
-        for(var i=0 ; i<4 ; i++){
+        var cardData = [
+            {
+                id:'1',
+                title :'Card title',
+                bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!'
+            },
+
+            {
+                id:'2',
+                title :'Card title',
+                bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!'
+            },
+
+            {
+                id:'3',
+                title :'Card title',
+                bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!'
+            },
+
+            {
+                id:'4',
+                title :'Card title',
+                bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!'
+            },
+
+            {
+                id:'5',
+                title :'Card title',
+                bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!'
+            },
+
+            {
+                id:'6',
+                title :'Card title',
+                bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!'
+            }
+        ]
+
+        var cardLength = cardData.length;
+
+        for(var i=0 ; i<cardLength ; i++){
             const divCol = document.createElement('div');
             divCol.classList.add('col-md-4','my-2','col-12');
 
@@ -53,12 +85,12 @@
 
             const cardTitle = document.createElement('h5');
             cardTitle.classList.add('card-title');
-            cardTitle.innerText = "Card Title"
+            cardTitle.innerText = cardData[i].title;
 
 
             const cardText = document.createElement('p');
             cardText.classList.add('card-text');
-            cardText.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum aliquid! Dolorum impedit voluptas, molestiae corrupti facere libero esse aperiam!";
+            cardText.innerText = cardData[i].bodyText;
 
 
             const cardBody = document.getElementsByClassName('card-body')[i];
@@ -75,19 +107,19 @@
         }
 
         function blueTheme(){
-                for (var i = 0; i<4;i++){
+                for (var i = 0; i<cardLength;i++){
                     document.getElementsByClassName("card")[i].style.backgroundColor = "blue";
                 }
         }
 
         function orangeTheme(){
-                for (var i = 0; i<4;i++){
+                for (var i = 0; i<cardLength;i++){
                     document.getElementsByClassName("card")[i].style.backgroundColor = "orange";
                 }
         }
 
         function  deleteCard(e){
-            e.target.parentNode.parentNode.remove();
+            e.target.parentElement.remove();
         }
 
 
